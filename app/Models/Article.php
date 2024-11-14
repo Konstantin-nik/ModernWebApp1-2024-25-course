@@ -10,6 +10,10 @@ class Article extends Model
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
 
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'article_category');
