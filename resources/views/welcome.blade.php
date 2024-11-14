@@ -13,7 +13,6 @@
             <div>
                 {{ $article->content }} 
             </div>
-            // add comments 
         </div>
     @endforeach
 </x-main-layout>
