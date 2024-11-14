@@ -17,7 +17,9 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            "title" => fake()->title,
+            "content" => fake()->text(500),
+            "published_at" => fake()->optional()->dateTime(),
         ];
     }
 }
