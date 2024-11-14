@@ -1,4 +1,4 @@
-<x-main-layout>
+<x-main-layout >
     @foreach ($articles as $article)
         <div class="mt-4">
             <h2 class="font-bold text-lg">{{$article->title}}</h2>
@@ -7,12 +7,13 @@
             </div>
             <div>
                 @foreach($article->categories as $category)
-                    <span class="bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-xs">{{$category->name}}</span>
+                    <span class="bg-slate-500 text-gray-800 px-2 py-1 rounded-md text-xs" style="background-color: {{$colors[$loop->index % count($colors)]}}">{{$category->name}}</span>
                 @endforeach
             </div>
             <div>
                 {{ $article->content }} 
             </div>
+            // add comments 
         </div>
     @endforeach
 </x-main-layout>

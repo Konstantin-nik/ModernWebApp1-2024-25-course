@@ -40,16 +40,6 @@
   <!-- Main Content -->
   <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
     {{ $slot }}
-    {{-- <article class="max-w-3xl mx-auto bg-white rounded-lg shadow-md p-6">
-      <h2 class="text-3xl font-semibold text-gray-800 mb-4">Blog Title</h2>
-      <p class="text-gray-700 mb-6 leading-relaxed">
-        Welcome to my blog! This is a space where I share my thoughts, ideas, and experiences. Enjoy reading and feel free to leave your comments.
-      </p>
-      <div class="prose max-w-none">
-        <p>Here's where the main blog content will go...</p>
-        <!-- Add more blog content as needed -->
-      </div>
-    </article> --}}
   </main>
 
   <!-- Footer -->
