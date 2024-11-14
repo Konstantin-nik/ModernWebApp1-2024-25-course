@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         foreach(Article::all() as $article) {
             $list_of_categories = Category::inRandomOrder()->take(random_int(0,4))->get();
 
-            $article->catogories()->saveMany($list_of_categories);
+            $article->categories()->attach($list_of_categories);
         }
 
         // User::factory(10)->create();

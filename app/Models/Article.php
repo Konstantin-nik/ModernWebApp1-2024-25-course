@@ -10,8 +10,8 @@ class Article extends Model
     /** @use HasFactory<\Database\Factories\ArticleFactory> */
     use HasFactory;
 
-    public function catogories()
+    public function categories()
     {
-        $this->belongsToMany(Category::class, 'article_category');
+        return $this->belongsToMany(Category::class, 'article_category');
     }
 }
