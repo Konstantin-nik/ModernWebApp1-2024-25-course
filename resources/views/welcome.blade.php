@@ -1,6 +1,6 @@
 <x-main-layout >
     @foreach ($articles as $article)
-        <a href="/articles/{{ $article->id }}" class="mt-10">
+        <a href="/articles/{{ $article->id }}" class="block mt-4">
             <h2 class="font-extrabold text-lg">{{$article->title}}</h2>
             <div>
                 {{ $article->published_at->format('Y-M-d') }}
@@ -14,7 +14,7 @@
                 {{ $article->content }} 
             </div>
             <!-- Comments Section -->
-            <div class="mt-4">
+            <div class="mt-2">
                 <h3 class="font-semibold text-md">Comments</h3>
                 @forelse($article->comments as $comment)
                     <div class="mt-2 px-2 py-1 p-3 border border-gray-200 rounded-lg">
