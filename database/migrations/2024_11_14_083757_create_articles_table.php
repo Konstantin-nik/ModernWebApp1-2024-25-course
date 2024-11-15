@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
 
+            $table->foreignId('author_id')->nullable();
             $table->string('title');
             $table->text('content');
             $table->timestamp('published_at')->nullable();
