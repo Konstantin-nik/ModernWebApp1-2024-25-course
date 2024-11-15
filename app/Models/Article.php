@@ -26,4 +26,12 @@ class Article extends Model
     public function author() {
         return $this->belongsTo(User::class);
     }
+
+    // Model scopes -------
+    public function scopePublished($query) 
+    {
+        return $query->whereNotNull('published_at')->where('published_at', '<=', now());
+    }
+    
+    // Model methods ------
 }

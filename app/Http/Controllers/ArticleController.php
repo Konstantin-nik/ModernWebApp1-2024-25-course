@@ -28,7 +28,7 @@ class ArticleController extends Controller
      */
     public function show(int $id)
     {
-        $article = Article::where("id", $id)->whereNotNull("published_at")->first();
+        $article = Article::published()->where("id", $id)->first();
 
         if ($article === null) {
             abort(404);
