@@ -1,6 +1,6 @@
 <x-main-layout >
     @foreach ($articles as $article)
-        <a href="/articles/{{ $article->id }}" class="block mt-4">
+        <a href="{{ route('articles.show', $article->id) }}" class="block mt-4">
             <h2 class="font-extrabold text-lg">{{$article->title}}</h2>
             <div>
                 {{ $article->published_at->format('Y-M-d') }}

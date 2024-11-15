@@ -12,7 +12,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::published()->orderByDesc("published_at")->paginate(10);
+
+        return view("articles.index")->with("articles", $articles);
     }
 
     /**
