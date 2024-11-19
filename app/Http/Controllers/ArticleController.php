@@ -18,17 +18,9 @@ class ArticleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      */
-    public function show(int $id)
+    public function show(string $id)
     {
         $article = Article::published()->where("id", $id)->first();
 
@@ -36,30 +28,6 @@ class ArticleController extends Controller
             abort(404);
         }
 
-        return view('articles.show')-> with('article', $article);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Article $article)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Article $article)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Article $article)
-    {
-        //
+        return view('articles.show')->with('article', $article);
     }
 }

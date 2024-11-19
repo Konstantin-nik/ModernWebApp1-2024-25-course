@@ -5,10 +5,16 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
+// Public visible routes
 Route::get('/', WelcomeController::class)->name('home');
 
 Route::get('articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+
+// Authenticated routes
+Route::name('user.')->group(function () {
+    Route::resource('user/articles', \App\Http\Controllers\User\ArticleController::class);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
