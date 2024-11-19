@@ -5,19 +5,7 @@
             @csrf
 
             <x-form-text name="title" label="Title" />
-
-            <div>
-                <label for="content" class="block text-sm font-medium text-gray-700">Content</label>
-                <textarea 
-                    id="content" 
-                    name="content" 
-                    rows="5" 
-                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    placeholder="Write your article content here">{{ old('content') }}</textarea>
-                @error('content')
-                    <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                @enderror
-            </div>
+            <x-form-textarea name="content" label="Content" />
 
             <div class="flex justify-between items-center">
                 <a 
