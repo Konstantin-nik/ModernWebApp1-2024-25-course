@@ -12,7 +12,9 @@ Route::get('articles', [ArticleController::class, 'index'])->name('articles.inde
 Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
 
 // Authenticated routes
-Route::name('user.')->group(function () {
+require __DIR__.'/auth.php';
+
+Route::name('user.')->middleware('auth')->group(function () {
     Route::resource('user/articles', \App\Http\Controllers\User\ArticleController::class);
 });
 
@@ -25,5 +27,3 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__.'/auth.php';
